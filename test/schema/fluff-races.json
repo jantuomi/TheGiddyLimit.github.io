@@ -1,0 +1,69 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"version": "1.0.3",
+	"type": "object",
+	"properties": {
+		"race": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"source": {
+						"type": "string"
+					},
+					"images": {
+						"type": "array",
+						"items": {
+							"$ref": "entry.json#/definitions/entryImage"
+						}
+					},
+					"_excludeBaseImages": {
+						"type": "boolean"
+					},
+					"entries": {
+						"entries": {
+							"type": "array",
+							"items": {
+								"$ref": "entry.json"
+							}
+						}
+					},
+					"_appendCopy": {
+						"type": "object",
+						"properties": {
+							"name": {
+								"type": "string"
+							},
+							"source": {
+								"type": "string"
+							}
+						}
+					},
+					"uncommon": {
+						"type": "boolean"
+					},
+					"monstrous": {
+						"type": "boolean"
+					}
+				},
+				"required": ["name", "source"],
+				"additionalProperties": false
+			}
+		},
+		"meta": {
+			"type": "object",
+			"properties": {
+				"uncommon": {
+					"$ref": "entry.json"
+				},
+				"monstrous": {
+					"$ref": "entry.json"
+				}
+			}
+		}
+	},
+	"additionalProperties": false
+}
